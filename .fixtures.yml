@@ -1,0 +1,7 @@
+fixtures:
+  repositories:
+    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+  symlinks:
+    community_kickstarts: "#{source_dir}"
+  repositories:
+    kickstart: "https://github.com/danzilio/puppet-kickstart"
