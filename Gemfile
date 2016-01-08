@@ -23,7 +23,7 @@ end
 group :development do
   gem "travis"
   gem "travis-lint"
-  gem "puppet-blacksmith"
+  gem "puppet-blacksmith", :git => 'https://github.com/voxpupuli/puppet-blacksmith.git'
   gem "voxpupuli-release", :git => 'https://github.com/voxpupuli/voxpupuli-release-gem.git'
   gem "guard-rake"
 end
