@@ -13,6 +13,7 @@ require 'rubocop/rake_task'
 # on Travis with --without development
 begin
   require 'puppet_blacksmith/rake_tasks'
+  require 'voxpupuli/release/rake_tasks'
 rescue LoadError # rubocop:disable Lint/HandleExceptions
 end
 

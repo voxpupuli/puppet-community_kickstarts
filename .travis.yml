@@ -34,3 +34,13 @@ matrix:
     env: PUPPET_GEM_VERSION="~> 3.3.0"
   - rvm: 2.1.0
     env: PUPPET_GEM_VERSION="~> 3.4.0"
+    
+deploy:
+  provider: puppetforge
+  user: puppet
+  password:
+    secure: "fHh4tTVb745wy+O3+IBowCo5aJgYling+Zgio9OSDehIf6qwmR5b6E8yTU1Hs6N2fnEUpupWb+srE215shynwSyhcNWlEeqzx2ZxktyGeYJ0clD36nP2ZOBjpeqwjhP086tBUtALJlD7QylqtDtmd0JQYprxQwHNz2rkWBhe1qxxldQWdcwTy4VPOVja3Wycnb6tSBqz/5uOHmBwoNzX4/loKnV69DyTxwsQkscNUwkrj2Q0F53n8CQlhABgrlaoOYw6T0xoKUeHd/RVvtDpt4SI7dt0eUda2X7SmgvLWKLENJGtZuPSjDx5HpcY8IwldqLnu5/uI8tfEPknxwpnWisF5AqM+7P8LZBk0FE+NzgoVMuBlanjj5Qn7F8mGOPg8SJtMvN+Daz3b1Y04mXZPT3deY+1xDOiHTGN+YksJF1KquQ35dapcJMdZxjPVXI0ceJnzn4otHC6Sk6YdhwNNNsFOrIsR32oHdW9DGFDi7GJHa3ndOm1n5PK0X70JccTSqxmFGickBhXX4yMPBPEmH9bI5o9e+S2AJOV0KHHdn++8fEB2YRVXfNOA76cGUsSb1zrJSr/2hA2szyxcVysmnkR8+/wMtHBxPv9awTj4gHcNKMi+hcsYFbt7nGy9CffTQrYMqsvlKj989EZqdYV3QdUbxr9m2qktnsWlPbxGs0="
+  on:
+    tags: true
+    all_branches: true
+    rvm: 1.9.3
