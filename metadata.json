@@ -1,6 +1,6 @@
 {
   "name": "puppet-community_kickstarts",
-  "version": "0.2.1",
+  "version": "0.2.2-rc0",
   "author": "voxpupuli",
   "summary": "Community kickstart types",
   "license": "Apache-2.0",
