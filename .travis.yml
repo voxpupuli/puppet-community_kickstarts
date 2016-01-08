@@ -3,9 +3,6 @@ sudo: false
 language: ruby
 bundler_args: --without development system_tests
 before_install: rm Gemfile.lock || true
-branches:
-  only:
-    - master
 script: bundle exec rake test
 matrix:
   include:

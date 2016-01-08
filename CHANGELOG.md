@@ -1,4 +1,4 @@
-## Release 0.2.1
+## Release 0.2.2
 Add puppetforge auto deploy capabilities
 Enhance the CentOS7 type after more thorough testing
 
