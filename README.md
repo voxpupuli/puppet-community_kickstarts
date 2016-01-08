@@ -1,3 +1,5 @@
+[![Puppet Forge](http://img.shields.io/puppetforge/v/puppet/community_kickstarts.svg?style=flat)](https://forge.puppetlabs.com/puppet/community_kickstarts) [![Build Status](https://travis-ci.org/voxpupuli/community_kickstarts.svg?branch=master)](https://travis-ci.org/voxpupuli/community_kickstarts)
+
 #### Table of Contents
 
 1. [Overview](#overview)
@@ -45,4 +47,4 @@ All types have the `required_packages` parameter, allowing you to customize what
 
 ## How It Works
 
-The kickstart generation is done with [danzilio/kickstart](https://github.com/danzilio/puppet-kickstart/). Please review it's documentation for more details.
+The kickstart generation is done with [puppet/community_kickstarts](https://github.com/voxpupuli/community_kickstarts/). Please review it's documentation for more details.

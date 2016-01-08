@@ -24,7 +24,8 @@ matrix:
     env: PUPPET_GEM_VERSION="~> 4.3.0" STRICT_VARIABLES=yes
   - rvm: 2.2.3
     env: PUPPET_GEM_VERSION="~> 4.3.0" STRICT_VARIABLES=yes
-    
+notifications:
+  email: false  
 deploy:
   provider: puppetforge
   user: puppet
@@ -34,3 +35,4 @@ deploy:
     tags: true
     all_branches: true
     rvm: 2.2.3
+    env: PUPPET_GEM_VERSION="~> 4.3.0" STRICT_VARIABLES=yes
