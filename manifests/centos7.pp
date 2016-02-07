@@ -36,6 +36,7 @@ define community_kickstarts::centos7 (
   $post_log                = '/root/ks-post.log',
   $post_fragments          = ['community_kickstarts/install_puppet.erb'],
   $puppet_repo             = 'https://yum.puppetlabs.com/el/7/PC1/x86_64/puppetlabs-release-pc1-1.0.0-1.el7.noarch.rpm',
+  $fragment_variables      = {},
   $repos                   = {},
   $partition_configuration = {
     zerombr   => '',
@@ -114,6 +115,9 @@ define community_kickstarts::centos7 (
   $fragments = {
     "post --log ${post_log}" => $post_fragments,
   }
+  $puppet_fragment_variables = {
+    'puppet_repo' => $puppet_repo,
+  }
 
   ::kickstart { $name:
     packages                => unique(concat($additional_packages, $required_packages)),
@@ -121,5 +125,6 @@ define community_kickstarts::centos7 (
     partition_configuration => $partition_configuration,
     repos                   => merge($base_repo, $repos),
     fragments               => $fragments,
+    fragment_variables      => merge($puppet_fragment_variables,$fragment_variables),
   }
 }
