@@ -51,4 +51,3 @@ describe 'community_kickstarts::centos7' do
     end
   end
 end
-
