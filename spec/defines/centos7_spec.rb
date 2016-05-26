@@ -41,7 +41,7 @@ describe 'community_kickstarts::centos7' do
   end
 
   context 'with only the partition_configuration parameter defined' do
-    let(:params) {{ :partition_configuration => partition_configuration }}
+    let(:params) {{ partition_configuration: partition_configuration }}
 
     it { is_expected.to compile }
     it 'should contain all of the partition commands' do
