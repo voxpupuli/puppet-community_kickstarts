@@ -17,7 +17,7 @@ describe 'community_kickstarts::centos7' do
       ]
     }
   end
-  let(:packages) { [ '@base' ] }
+  let(:packages) { ['@base'] }
   let(:repos) do
     {
       'base' => {
