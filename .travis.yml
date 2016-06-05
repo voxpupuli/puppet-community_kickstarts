@@ -1,30 +1,36 @@
 ---
 sudo: false
 language: ruby
-bundler_args: --without development system_tests
-before_install: rm Gemfile.lock || true
-script: bundle exec rake test
+cache: bundler
+bundler_args: --without system_tests development
+before_install:
+  - bundle -v
+  - rm Gemfile.lock || true
+  - gem update --system
+  - gem update bundler
+  - gem --version
+  - bundle -v
+script:
+  - 'bundle exec rake $CHECK'
 matrix:
+  fast_finish: true
   include:
   - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.2.0"
+    env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.8.0" STRICT_VARIABLES=yes
-  - rvm: 1.9.3
-    env: PUPPET_GEM_VERSION="~> 3.8.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
-  - rvm: 2.1.7
-    env: PUPPET_GEM_VERSION="~> 3.8.0" STRICT_VARIABLES=yes
-  - rvm: 2.1.7
-    env: PUPPET_GEM_VERSION="~> 3.8.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
-  - rvm: 2.1.7
-    env: PUPPET_GEM_VERSION="~> 4.0.0" STRICT_VARIABLES=yes
-  - rvm: 2.2.3
-    env: PUPPET_GEM_VERSION="~> 4.0.0" STRICT_VARIABLES=yes
-  - rvm: 2.1.7
-    env: PUPPET_GEM_VERSION="~> 4.3.0" STRICT_VARIABLES=yes
-  - rvm: 2.2.3
-    env: PUPPET_GEM_VERSION="~> 4.3.0" STRICT_VARIABLES=yes
-    
+    env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" FUTURE_PARSER="yes" CHECK=test
+  - rvm: 2.1
+    env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
+  - rvm: 2.1
+    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+  - rvm: 2.2
+    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+  - rvm: 2.3.1
+    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=rubocop
+  - rvm: 2.3.1
+    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+notifications:
+  email: false
 deploy:
   provider: puppetforge
   user: puppet
@@ -32,5 +38,7 @@ deploy:
     secure: "fHh4tTVb745wy+O3+IBowCo5aJgYling+Zgio9OSDehIf6qwmR5b6E8yTU1Hs6N2fnEUpupWb+srE215shynwSyhcNWlEeqzx2ZxktyGeYJ0clD36nP2ZOBjpeqwjhP086tBUtALJlD7QylqtDtmd0JQYprxQwHNz2rkWBhe1qxxldQWdcwTy4VPOVja3Wycnb6tSBqz/5uOHmBwoNzX4/loKnV69DyTxwsQkscNUwkrj2Q0F53n8CQlhABgrlaoOYw6T0xoKUeHd/RVvtDpt4SI7dt0eUda2X7SmgvLWKLENJGtZuPSjDx5HpcY8IwldqLnu5/uI8tfEPknxwpnWisF5AqM+7P8LZBk0FE+NzgoVMuBlanjj5Qn7F8mGOPg8SJtMvN+Daz3b1Y04mXZPT3deY+1xDOiHTGN+YksJF1KquQ35dapcJMdZxjPVXI0ceJnzn4otHC6Sk6YdhwNNNsFOrIsR32oHdW9DGFDi7GJHa3ndOm1n5PK0X70JccTSqxmFGickBhXX4yMPBPEmH9bI5o9e+S2AJOV0KHHdn++8fEB2YRVXfNOA76cGUsSb1zrJSr/2hA2szyxcVysmnkR8+/wMtHBxPv9awTj4gHcNKMi+hcsYFbt7nGy9CffTQrYMqsvlKj989EZqdYV3QdUbxr9m2qktnsWlPbxGs0="
   on:
     tags: true
+    # all_branches is required to use tags
     all_branches: true
-    rvm: 2.2.3
+    # Only publish if our main Ruby target builds
+    rvm: 2.2

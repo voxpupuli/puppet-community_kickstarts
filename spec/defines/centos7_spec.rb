@@ -17,7 +17,7 @@ describe 'community_kickstarts::centos7' do
       ]
     }
   end
-  let(:packages) {[ '@base' ]}
+  let(:packages) { ['@base'] }
   let(:repos) do
     {
       'base' => {
@@ -29,26 +29,25 @@ describe 'community_kickstarts::centos7' do
   context 'when using defaults' do
     it { is_expected.to compile }
 
-    it 'should contain all of the repos' do
+    it 'contains all of the repos' do
       repos.keys.each do |repo|
         is_expected.to contain_file(title).with_content %r{^repo --name #{repo}}
       end
     end
 
-    it 'should contain a valid packages section' do
-      is_expected.to contain_file(title).with_content /^%packages$/
+    it 'contains a valid packages section' do
+      is_expected.to contain_file(title).with_content %r{^%packages$}
     end
   end
 
   context 'with only the partition_configuration parameter defined' do
-    let(:params) {{ :partition_configuration => partition_configuration }}
+    let(:params) { { partition_configuration: partition_configuration } }
 
     it { is_expected.to compile }
-    it 'should contain all of the partition commands' do
+    it 'contains all of the partition commands' do
       partition_configuration.keys.each do |command|
         is_expected.to contain_file(title).with_content %r{^#{command}}
       end
     end
   end
 end
-
