@@ -31,12 +31,12 @@ describe 'community_kickstarts::centos7' do
 
     it 'contains all of the repos' do
       repos.keys.each do |repo|
-        is_expected.to contain_file(title).with_content (/^repo --name #{repo}/)
+        is_expected.to contain_file(title).with_content %r{^repo --name #{repo}}
       end
     end
 
     it 'contains a valid packages section' do
-      is_expected.to contain_file(title).with_content (/^%packages$/)
+      is_expected.to contain_file(title).with_content %r{^%packages$}
     end
   end
 
@@ -46,7 +46,7 @@ describe 'community_kickstarts::centos7' do
     it { is_expected.to compile }
     it 'contains all of the partition commands' do
       partition_configuration.keys.each do |command|
-        is_expected.to contain_file(title).with_content (/^#{command}/)
+        is_expected.to contain_file(title).with_content %r{^#{command}}
       end
     end
   end
