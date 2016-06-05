@@ -51,8 +51,11 @@ Style/BlockDelimiters:
 
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
+
 Style/RegexpLiteral:
+  EnforcedStyle: percent_r
   Enabled: true
+
 Style/WordArray:
   Enabled: true
 
