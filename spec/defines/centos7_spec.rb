@@ -8,7 +8,7 @@ describe 'community_kickstarts::centos7' do
       'clearpart' => '--all --initlabel',
       'part' => [
         '/boot --fstype ext3 --size 250',
-        'pv.2 --size 5000 --grow',
+        'pv.2 --size 5000 --grow'
       ],
       'volgroup' => 'VolGroup00 --pesize 32768 pv.2',
       'logvol' => [
