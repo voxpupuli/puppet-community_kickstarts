@@ -1,3 +1,8 @@
+## 2016-07-29 - Release 0.3.1
+
+* modulesync with latest voxpupuli defaults (fixes broken tests)
+
+
 ## 2016-06-12 - Release 0.3.0
 
 * Drop Ruby1.8 Support
