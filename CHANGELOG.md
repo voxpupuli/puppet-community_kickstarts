@@ -1,3 +1,8 @@
+## 2016-08-01 - Release 0.3.2
+
+* The previous release didn't make it to the forge because of an issue with travis
+
+
 ## 2016-07-29 - Release 0.3.1
 
 * modulesync with latest voxpupuli defaults (fixes broken tests)
