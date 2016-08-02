@@ -1,3 +1,8 @@
+## 2016-08-02 - Release 0.3.4
+
+* The previous release didn't make it to the forge (again again) because of an issue with travis
+
+
 ## 2016-08-01 - Release 0.3.3
 
 * The previous release didn't make it to the forge (again) because of an issue with travis
