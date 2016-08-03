@@ -3,7 +3,6 @@ require 'puppet_blacksmith/rake_tasks'
 require 'voxpupuli/release/rake_tasks'
 require 'puppet-strings/rake_tasks'
 
-# we only run rubocop on ruby2.3.1
 if RUBY_VERSION >= '2.3.0'
   require 'rubocop/rake_task'
 
