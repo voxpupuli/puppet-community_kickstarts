@@ -1,5 +1,12 @@
 # Kickstart module for Puppet
 
+[![Build Status](https://travis-ci.org/voxpupuli/puppet-community_kickstarts.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-community_kickstarts)
+[![Code Coverage](https://coveralls.io/repos/github/voxpupuli/puppet-community_kickstarts/badge.svg?branch=master)](https://coveralls.io/github/voxpupuli/puppet-community_kickstarts)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/puppet/community_kickstarts.svg)](https://forge.puppetlabs.com/puppet/community_kickstarts)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/puppet/community_kickstarts.svg)](https://forge.puppetlabs.com/puppet/community_kickstarts)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/puppet/community_kickstarts.svg)](https://forge.puppetlabs.com/puppet/community_kickstarts)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/puppet/community_kickstarts.svg)](https://forge.puppetlabs.com/puppet/community_kickstarts)
+
 #### Table of Contents
 
 1. [Overview](#overview)
