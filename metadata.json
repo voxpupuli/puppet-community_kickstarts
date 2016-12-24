@@ -10,10 +10,17 @@
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
+      "version_requirement": ">= 4.6.0 < 5.0.0"
     },
     {
-      "name": "danzilio-kickstart"
+      "name": "danzilio-kickstart",
+      "version_requirement": ">= 0.1.0 < 2.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.8.7 < 5.0.0"
     }
   ],
   "operatingsystem_support": [
