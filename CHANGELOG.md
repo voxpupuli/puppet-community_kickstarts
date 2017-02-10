@@ -1,3 +1,9 @@
+# Changelog
+
+## 2017-02-11 Release 0.4.0
+
+This is the last release with puppet3 support!
+
 ## 2016-08-02 - Release 0.3.4
 
 * The previous release didn't make it to the forge (again again) because of an issue with travis
