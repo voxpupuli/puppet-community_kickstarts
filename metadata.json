@@ -1,7 +1,7 @@
 {
   "name": "puppet-community_kickstarts",
   "version": "1.0.0-rc0",
-  "author": "voxpupuli",
+  "author": "Vox Pupuli",
   "summary": "Community kickstart types",
   "license": "Apache-2.0",
   "source": "https://github.com/voxpupuli/puppet-community_kickstarts",
@@ -20,7 +20,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.6.1 < 5.0.0"
+      "version_requirement": ">= 4.7.1 < 6.0.0"
     }
   ],
   "operatingsystem_support": [
