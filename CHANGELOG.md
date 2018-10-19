@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v1.0.2](https://github.com/voxpupuli/puppet-community_kickstarts/tree/v1.0.2) (2018-10-19)
+
+[Full Changelog](https://github.com/voxpupuli/puppet-community_kickstarts/compare/v1.0.1...v1.0.2)
+
+**Merged pull requests:**
+
+- modulesync 2.1.0 and allow puppet 6.x [\#51](https://github.com/voxpupuli/puppet-community_kickstarts/pull/51) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [v1.0.1](https://github.com/voxpupuli/puppet-community_kickstarts/tree/v1.0.1) (2018-09-06)
 
 [Full Changelog](https://github.com/voxpupuli/puppet-community_kickstarts/compare/v1.0.0...v1.0.1)
@@ -20,7 +28,6 @@ These should not affect the functionality of the module.
 
 **Merged pull requests:**
 
-- release 1.0.0 [\#37](https://github.com/voxpupuli/puppet-community_kickstarts/pull/37) ([bastelfreak](https://github.com/bastelfreak))
 - bump puppet version dependency to \>= 4.7.1 \< 6.0.0 [\#36](https://github.com/voxpupuli/puppet-community_kickstarts/pull/36) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [v0.4.0](https://github.com/voxpupuli/puppet-community_kickstarts/tree/v0.4.0) (2017-02-10)
