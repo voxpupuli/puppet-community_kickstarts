@@ -93,7 +93,6 @@ define community_kickstarts::centos7 (
     '-iwl7260-firmware',
   ],
 ) {
-
   $base_repo = { base => { baseurl => $url } }
 
   $commands = {

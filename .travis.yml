@@ -1,5 +1,7 @@
 ---
-dist: bionic
+# yamllint disable rule:line-length rule:truthy
+os: linux
+dist: focal
 language: ruby
 cache: bundler
 before_install:
@@ -7,25 +9,25 @@ before_install:
   - bundle --version
 script:
   - 'bundle exec rake $CHECK'
-matrix:
+jobs:
   fast_finish: true
   include:
-  - rvm: 2.4.4
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 5.0" CHECK=test
-  - rvm: 2.5.3
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 6.0" CHECK=test_with_coveralls
-  - rvm: 2.5.3
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 6.0" CHECK=rubocop
-  - rvm: 2.4.4
-    bundler_args: --without system_tests development release
-    env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
+    - rvm: 2.4.4
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 5.0" CHECK=test
+    - rvm: 2.5.3
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 6.0" CHECK=test_with_coveralls
+    - rvm: 2.5.3
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 6.0" CHECK=rubocop
+    - rvm: 2.4.4
+      bundler_args: --without system_tests development release
+      env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
 branches:
   only:
-  - master
-  - /^v\d/
+    - master
+    - /^v\d/
 notifications:
   email: false
   webhooks: https://voxpupu.li/incoming/travis
@@ -36,7 +38,7 @@ notifications:
       - "chat.freenode.org#voxpupuli-notifications"
 deploy:
   provider: puppetforge
-  user: puppet
+  username: puppet
   password:
     secure: "fHh4tTVb745wy+O3+IBowCo5aJgYling+Zgio9OSDehIf6qwmR5b6E8yTU1Hs6N2fnEUpupWb+srE215shynwSyhcNWlEeqzx2ZxktyGeYJ0clD36nP2ZOBjpeqwjhP086tBUtALJlD7QylqtDtmd0JQYprxQwHNz2rkWBhe1qxxldQWdcwTy4VPOVja3Wycnb6tSBqz/5uOHmBwoNzX4/loKnV69DyTxwsQkscNUwkrj2Q0F53n8CQlhABgrlaoOYw6T0xoKUeHd/RVvtDpt4SI7dt0eUda2X7SmgvLWKLENJGtZuPSjDx5HpcY8IwldqLnu5/uI8tfEPknxwpnWisF5AqM+7P8LZBk0FE+NzgoVMuBlanjj5Qn7F8mGOPg8SJtMvN+Daz3b1Y04mXZPT3deY+1xDOiHTGN+YksJF1KquQ35dapcJMdZxjPVXI0ceJnzn4otHC6Sk6YdhwNNNsFOrIsR32oHdW9DGFDi7GJHa3ndOm1n5PK0X70JccTSqxmFGickBhXX4yMPBPEmH9bI5o9e+S2AJOV0KHHdn++8fEB2YRVXfNOA76cGUsSb1zrJSr/2hA2szyxcVysmnkR8+/wMtHBxPv9awTj4gHcNKMi+hcsYFbt7nGy9CffTQrYMqsvlKj989EZqdYV3QdUbxr9m2qktnsWlPbxGs0="
   on:
