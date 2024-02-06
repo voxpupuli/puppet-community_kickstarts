@@ -44,6 +44,7 @@ describe 'community_kickstarts::centos7' do
     let(:params) { { partition_configuration: partition_configuration } }
 
     it { is_expected.to compile }
+
     it 'contains all of the partition commands' do
       partition_configuration.keys.each do |command|
         is_expected.to contain_file(title).with_content %r{^#{command}}
