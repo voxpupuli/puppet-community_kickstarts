@@ -1,3 +1,7 @@
+
+> [!IMPORTANT]
+> This module has been archived on 2025-08-13 (See discussion in [#74](https://github.com/voxpupuli/puppet-community_kickstarts/issues/74)).
+
 # Kickstart module for Puppet
 
 [![Build Status](https://travis-ci.org/voxpupuli/puppet-community_kickstarts.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-community_kickstarts)
